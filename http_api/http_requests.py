@@ -18,3 +18,12 @@ response = requests.get(url, headers={'Accept': 'application/json'}, params=para
 print(f'Request to {url}. \nStatus code {response.status_code}')
 
 data = response.json()
+
+i = 0
+while i < len(data['features']):
+    #  234.   Magnitude ~   3.1       Place ➡  Poland
+    properties = data['features'][i]['properties']
+    result = f'{i + 1:5.0f}.\t Magnitude ~ {properties["mag"]:5.1f} \t Place ➡  {properties["place"]}'
+    i += 1
+    print(result)
+

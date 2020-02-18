@@ -13,3 +13,7 @@ td = parsed_html.select('td')
 
 for i in td:
     print(i)
+
+
+
+print()
